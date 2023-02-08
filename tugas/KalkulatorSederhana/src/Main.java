@@ -7,78 +7,40 @@ public class Main {
 
             Scanner input = new Scanner(System.in);
 
-            System.out.println("== Kalkulator Sederhana ==\n");
+            System.out.println("=== Kalkulator Sederhana ===\n");
             System.out.println(" ^ Menu");
-            System.out.println("1. Penjumlahan \n2. Pengurangan \n3. Perkalian \n4. Pembagian \n5. Sisa bagi (modulus)\n0. Exit");
+            System.out.println("1. Penjumlahan \n2. Pengurangan \n3. Perkalian \n4. Pembagian \n5. Sisa bagi (modulus)\n");
 
-            System.out.print("\nMasukkan kode angka diatas : ");
+            System.out.print("Masukan pilihan anda  : ");
             int choice = input.nextInt();
-
+            System.out.print("\nMasukan angka pertama : ");
+            double num1 = input.nextDouble();
+            System.out.print("Masukan angka kedua   : ");
+            double num2 = input.nextDouble();
             double result = 0;
-
             switch (choice) {
                 case 1:
-                    System.out.println("\n^ Penjumlahan");
-                    System.out.print("Masukkan angka pertama     : ");
-                    double num1 = input.nextDouble();
-                    System.out.print("Masukkan angka kedua       : ");
-                    double num2 = input.nextDouble();
                     result = num1 + num2;
-                    System.out.println("Hasil                      : " + result);
                     break;
-
                 case 2:
-                    System.out.println("\n^ Pengurangan");
-                    System.out.print("Masukkan angka pertama     : ");
-                    double num3 = input.nextDouble();
-                    System.out.print("Masukkan angka kedua       : ");
-                    double num4 = input.nextDouble();
-                    result = num3 - num4;
-                    System.out.println("Hasil                      : " + result);
+                    result = num1 - num2;
                     break;
-
                 case 3:
-                    System.out.println("\n^ Perkalian");
-                    System.out.print("Masukkan angka pertama     : ");
-                    double num5 = input.nextDouble();
-                    System.out.print("Masukkan angka kedua       : ");
-                    double num6 = input.nextDouble();
-                    result = num5 * num6;
-                    System.out.println("Hasil                      : " + result);
+                    result = num1 * num2;
                     break;
-
                 case 4:
-                    System.out.println("\n^ Pembagian");
-                    System.out.print("Masukkan angka pertama     : ");
-                    double num7 = input.nextDouble();
-                    System.out.print("Masukkan angka kedua       : ");
-                    double num8 = input.nextDouble();
-                    result = num7 / num8;
-                    System.out.println("Hasil                      : " + result);
+                    result = num1 / num2;
                     break;
-
                 case 5:
-                    System.out.println("\n^ Sisa bagi (modulus)");
-                    System.out.print("Masukkan angka pertama     : ");
-                    double num9 = input.nextDouble();
-                    System.out.print("Masukkan angka kedua       : ");
-                    double num10 = input.nextDouble();
-                    result = num9 % num10;
-                    System.out.println("Hasil                      : " + result);
+                    result = num1 % num2;
                     break;
-
-                case 0:
-                    System.out.println("\nAnda telah keluar dari program.");
-                    break;
-
                 default:
-                    System.out.println("\nKode yang anda masukan salah!");
+                    System.out.println("Pilihan salah!");
                     return;
             }
-
+            System.out.println("\nHasil nya adalah      : " + result);
             PrintWriter output = new PrintWriter(new FileWriter("result.txt"));
             output.println(result);
             output.close();
-
         }
 }
